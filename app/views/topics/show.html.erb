@@ -10,5 +10,15 @@
   <%= @topic.user.name %>
 </p>
 
+<div id="posts">
+  <p><strong>Posts:</strong></p>
+  <% @topic.posts.each do |post| %>
+    <div class="post">
+      <p class="post-author"><%= post.user.name %> says:</p>
+      <p class="post-body"><%= post.body %></p>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_topic_path(@topic) %> |
 <%= link_to 'Back', topics_path %>
