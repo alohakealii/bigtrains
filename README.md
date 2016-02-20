@@ -1,4 +1,6 @@
 # bigtrains
+See bigtrains.sh for how to setup and use
+
 .gitignore is the Github Rails template
 
 ## Versions
