@@ -19,6 +19,22 @@ bin/rake db:migrate
 # show.html.erb do the same thing for post.user
 # and add .title to post.topic
 
+# In bigtrains/app/models/topics.rb, add the line
+# has_many :posts to create a has_many relationship between
+# topics and posts
+
+# To get the topics to display their respective posts, add
+# this code to bigtrains/app/views/topics/show.html.erb:
+# <div id="posts">
+#   <p><strong>Posts:</strong></p>
+#   <% @topic.posts.each do |post| %>
+#     <div class="post">
+#       <p class="post"><%= post.body %></p>
+#       <p class="user"><%= post.user.name %></p>
+#     </div>
+#   <% end %>
+# </div>
+
 # To create a user go to http://localhost:3000/users
 
 # To create a topic go to http://localhost:3000/
