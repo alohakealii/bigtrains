@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @topic.title %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @topic.user.name %>
+</p>
+
+<p>
+  <strong>Topic ID:</strong>
+  <%= @topic.id %>
+</p>
+
+<div id="posts">
+  <p><strong>Posts:</strong></p>
+  <% @topic.posts.each do |post| %>
+    <div class="post">
+      <p class="post-author"><%= post.user.name %> says:</p>
+      <p class="post-body"><%= post.body %></p>
+    </div>
+  <% end %>
+  <%= link_to 'New Post', new_post_path %>
+</div>
+
+<%= link_to 'Edit', edit_topic_path(@topic) %> |
+<%= link_to 'Back', topics_path %>
