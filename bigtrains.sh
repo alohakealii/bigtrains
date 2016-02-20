@@ -29,7 +29,7 @@ bin/rake db:migrate
 #   <p><strong>Posts:</strong></p>
 #   <% @topic.posts.each do |post| %>
 #     <div class="post">
-#       <p class="post"><%= post.body %></p>
+#       <p class="postbody"><%= post.body %></p>
 #       <p class="user"><%= post.user.name %></p>
 #     </div>
 #   <% end %>
