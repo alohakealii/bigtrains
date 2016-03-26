@@ -1,3 +1,24 @@
 // Place all the styles related to the Topics controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.topic {
+	background-color: gray;
+	margin: 5px;
+	border-width: 1px;
+	border-style: solid;
+
+	.topic-title {
+		font-size: 1.5em;
+		border-style: none;
+		border-bottom-style: solid;
+		padding-left: 0.5em;
+	}
+
+	.posts {
+		margin: 10px 0px;
+	}
+
+	.form {
+	}
+}

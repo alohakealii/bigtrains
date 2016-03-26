@@ -1,3 +1,25 @@
 // Place all the styles related to the Posts controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.post {
+	background-color: #808c99;
+	border-width: 1px;
+	border-style: solid;
+	margin: 2px 0px;
+	.post-header {
+		border-style: none;
+		border-bottom-width: 1px;
+		border-bottom-style: solid;
+		.author {
+			font-weight: bold;
+			margin-right: 2em;
+		}
+		.time {
+
+		}
+	}
+	.post-body {
+		margin: 5px;
+	}
+}
