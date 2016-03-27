@@ -2,24 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.post {
+.panel.panel-default.post {
 	background-color: #808c99;
-	border-width: 1px;
-	border-style: solid;
-	margin: 2px 0px;
-	.post-header {
-		border-style: none;
-		border-bottom-width: 1px;
-		border-bottom-style: solid;
+	border-color: black;
+	.panel-heading {
+		background-color: inherit;
+		border-color: inherit;
 		.author {
 			font-weight: bold;
-			margin-right: 2em;
+			margin-right: 1em;
 		}
 		.time {
-
 		}
 	}
-	.post-body {
-		margin: 5px;
+	.panel-body {
 	}
 }
