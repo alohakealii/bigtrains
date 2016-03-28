@@ -65,15 +65,11 @@ class TopicsController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_topic
       @topic = Topic.find(params[:id])
+      session[:topic_id] = params[:id]
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      if params.has_key?("topic")
-        if params[:topic].has_key?("name")
-          params[:topic][:user_id] = User.find_by(name: params[:topic][:name]).id
-        end
-      end
       params.require(:topic).permit(:title, :user_id)
     end
 end
