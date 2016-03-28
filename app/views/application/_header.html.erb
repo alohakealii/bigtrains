@@ -1,3 +1,7 @@
 <header>
-	<%= render 'navbar' %>
+	<% if session[:user_id] %>
+		<%= render 'user_navbar' %>
+	<% else %>
+		<%= render 'navbar' %>
+	<% end %>
 </header>
