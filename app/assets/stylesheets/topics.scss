@@ -2,16 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'global';
+
 .topic.panel.panel-default {
-	background-color: gray;
+	//background-color: $seconday-color;
 	margin: 5px;
-	border-width: 1px;
-	border-style: solid;
+	border: 1px none $color1;
 
 	.topic-title {
 		font-size: 1.5em;
+		color: $color1;
 		border-style: none;
-		border-bottom-style: solid;
+		border-bottom: 2px solid $color1;
 		padding-left: 0.5em;
 	}
 
@@ -20,5 +22,10 @@
 	}
 
 	.form {
+		textarea {
+			min-width: 60px;
+			width: 60%;
+			height: 120px;
+		}
 	}
 }

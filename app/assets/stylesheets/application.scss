@@ -15,6 +15,25 @@
  *= require_self
  */
 
+@import 'global';
+
 body {
-	background-color: #dadbdf;
+	background-color: white;
+
+	nav.navbar {
+		border-radius: 0;
+		background-color: inherit;
+		//background-color: $secondary-color;
+		border-bottom: 2px none $color5;
+		.nav.navbar-nav li {
+		    a {
+		    	color: $color1;
+		    }
+			a:hover {
+				color: black;
+				background-color: inherit;
+			}
+		}
+	}
+
 }

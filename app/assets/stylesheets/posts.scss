@@ -2,8 +2,10 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import 'global';
+
 .panel.panel-default.post {
-	background-color: #808c99;
+	background-color: $color2;
 	border-color: black;
 	.panel-heading {
 		background-color: inherit;
