@@ -28,10 +28,10 @@ class PostsController < ApplicationController
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to topic_path(id: session[:topic_id]), notice: 'Post was successfully created.' }
+        format.html { redirect_to group_topic_path(id: session[:topic_id]), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
-        format.html { render topic_path(id: session[:topic_id]) }
+        format.html { render group_topic_path(id: session[:topic_id]) }
         format.json { render json: @post.errors, status: :unprocessable_entity }
       end
     end

@@ -10,6 +10,7 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
+    params.delete(:id)
   end
 
   # GET /topics/new
