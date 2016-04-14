@@ -1,0 +1,8 @@
+<tr class="panel panel-default topic">
+  <td class="panel-heading">
+  	<%= link_to topic.title, group_topic_path(@group, topic) %>
+  </td>
+  <td class="panel-body">
+  	<%= topic.posts.last.created_at %>
+  </td>
+</tr>

@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
-  resources :topics do
-    resources :posts
+  resources :groups do
+    resources :topics do
+      resources :posts
+    end
   end
   resources :users
   resources :sessions
@@ -17,7 +19,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
-  root 'topics#index'
+  root 'sessions#home'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

@@ -1,4 +1,4 @@
-<%= form_for [@topic, @topic.posts.build] do |f| %>
+<%= form_for [@group, @topic, @topic.posts.build] do |f| %>
   <div class="field">
     <%= f.text_area :body %>
   </div>

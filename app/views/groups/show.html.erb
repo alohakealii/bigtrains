@@ -1,0 +1,16 @@
+<%# breadcrumbs %>
+
+<div class="group panel panel-default">
+  <div class="group-name">
+    <%= @group.name %>
+  </div>
+
+  <table class="topics">
+    <%= render @group.topics %>
+  </table>
+  <% if current_user %>
+	<div class="form">
+	  <%= render 'new_topic' %>
+	</div>
+  <% end %>
+</div>
