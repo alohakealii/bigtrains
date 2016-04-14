@@ -3,6 +3,10 @@
   	<%= link_to topic.title, group_topic_path(@group, topic) %>
   </td>
   <td class="panel-body">
-  	<%= topic.posts.last.created_at %>
+  	<% if topic.posts.empty? %>
+  		<%= topic.created_at %>
+  	<% else %>
+  		<%= topic.posts.last.created_at %>
+  	<% end %>
   </td>
 </tr>

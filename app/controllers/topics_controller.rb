@@ -10,7 +10,6 @@ class TopicsController < ApplicationController
   # GET /topics/1
   # GET /topics/1.json
   def show
-    params.delete(:id)
   end
 
   # GET /topics/new
@@ -29,10 +28,10 @@ class TopicsController < ApplicationController
 
     respond_to do |format|
       if @topic.save
-        format.html { redirect_to @topic, notice: 'Topic was successfully created.' }
+        format.html { redirect_to group_topic_path(id: @topic.id), notice: 'Topic was successfully created.' }
         format.json { render :show, status: :created, location: @topic }
       else
-        format.html { render :new }
+        format.html { render group_path }
         format.json { render json: @topic.errors, status: :unprocessable_entity }
       end
     end
@@ -71,6 +70,7 @@ class TopicsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def topic_params
-      params.require(:topic).permit(:title, :user_id)
+      params[:topic][:group_id] = params[:group_id]
+      params.require(:topic).permit(:group_id, :title)
     end
 end
