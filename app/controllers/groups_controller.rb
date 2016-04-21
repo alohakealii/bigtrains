@@ -17,6 +17,11 @@ class GroupsController < ApplicationController
 		@group = Group.new
 	end
 
+	# GET /list
+	def list
+		@groups = Group.all.select { |group| group.root? }
+	end
+
 	# GET /groups/1/edit
 	def edit
 	end
