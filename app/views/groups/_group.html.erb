@@ -1,6 +1,8 @@
-<div class="group-info">
-	<%= link_to group.name, group_path(group.id) %>
+<%#= link_to group_path(group.id) do %>
+<div class="group-info" id="<%= group.id %>" href="<%= group_url(group.id) %>">
+	<%= group.name %>
 </div>
+<%# end %>
 <% unless group.children.empty? %>
 <ul class="group-children">
 	<% group.children.each do |child| %>

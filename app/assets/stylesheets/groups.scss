@@ -4,16 +4,15 @@
 @import 'global';
 
 .group-list {
+	div:hover {
+		cursor: pointer;
+		background-color: green;
+	}
 	.group-info {
 		display: inline;
 		border: 1px solid $color1;
 		border-radius: 5px;
 		padding: 0.3em;
-
-		div {
-			display: inline-block;
-			border: 1px solid green;
-		}
 	}
 	ul {
 		list-style-type: none;
