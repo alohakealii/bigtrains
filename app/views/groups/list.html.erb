@@ -1,5 +1,9 @@
 <div class="group-list">
-	<%= render @groups %>
+	<% @groups.each do |group| %>
+		<div class="group-root">
+			<%= render group %>
+		</div>
+	<% end %>
 </div>
 
 <div class="hidden link"><%= groups_url %></div>

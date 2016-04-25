@@ -16,5 +16,13 @@
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
+<p>
+	<strong>Primary Group:</strong>
+	<% if @user.primary_group %>
+		<%= link_to @user.primary_group.name, group_path(@user.primary_group.id) %>
+	<% else %>
+		None
+	<% end %>
+</p>
 
 <%= link_to 'Edit', edit_user_path(@user) %>

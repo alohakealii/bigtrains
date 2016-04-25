@@ -4,27 +4,30 @@
 @import 'global';
 
 .group-list {
-	div:hover {
-		cursor: pointer;
-		background-color: green;
-	}
-	.group-info {
-		display: inline;
-		border: 1px solid $color1;
-		border-radius: 5px;
-		padding: 0.3em;
-	}
-	ul {
-		list-style-type: none;
-		font: inherit;
-
-		// vertical line
-		border-left: 2px solid $color3;
-		margin-left: 1em;
-		padding-left: 1em;
-
-		li {
-			margin-top: 0.5em;
+	.group-root {
+		margin-bottom: 1em;
+			div:hover {
+			cursor: pointer;
+			background-color: green;
 		}
+		.group-info {
+			display: inline;
+			border: 1px solid $color1;
+			border-radius: 5px;
+			padding: 0.3em;
+		}
+		ul {
+			list-style-type: none;
+			font: inherit;
+
+			// vertical line
+			border-left: 2px solid $color3;
+			margin-left: 1em;
+			padding-left: 1em;
+
+			li {
+				margin-top: 0.5em;
+			}
+		}	
 	}
 }

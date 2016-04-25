@@ -19,9 +19,7 @@ class UsersController < ApplicationController
 
   # GET /users/1/edit
   def edit
-    authenticate_user!
-
-    unless current_user.id == @user.id
+    unless session[:user_id] == @user.id
       redirect_to root_path
     end
   end
@@ -78,6 +76,7 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:name, :email, :password, :password_confirmation)
+      params[:user][:primary_group] = Group.find(params[:user][:primary_group])
+      params.require(:user).permit(:first_name, :last_name, :phone, :primary_group, :email, :password, :password_confirmation)
     end
 end
