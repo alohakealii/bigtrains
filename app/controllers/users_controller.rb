@@ -27,11 +27,14 @@ class UsersController < ApplicationController
   # POST /users
   # POST /users.json
   def create
-    @user = User.new(user_params)
+    params = user_params
+    params[:primary_group] = Group.find(params[:primary_group])
+    @user = User.new(params)
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        session[:user_id] = @user.id
+        format.html { redirect_to group_path(@user.primary_group.id), notice: 'User was successfully created.' }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -76,7 +79,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params[:user][:primary_group] = Group.find(params[:user][:primary_group])
-      params.require(:user).permit(:first_name, :last_name, :phone, :primary_group, :email, :password, :password_confirmation)
+      params.require(:user).permit(:first_name, :last_name, :phone, :email, :password, :password_confirmation, :primary_group)
     end
 end
