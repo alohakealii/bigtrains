@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
 	validates :email, presence: true, uniqueness: true
+	validates :primary_group, presence: true
 	has_many :posts
 	belongs_to :primary_group, class_name: "Group", foreign_key: "primary_group"
 
