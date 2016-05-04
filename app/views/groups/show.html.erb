@@ -6,7 +6,11 @@
   </div>
 
   <table class="topics">
+    <% if @group.topics.empty? %>
+    <p>No Topics</p>
+    <% else %>
     <%= render @group.topics %>
+    <% end %>
   </table>
   <% if current_user %>
     <div class="form">
