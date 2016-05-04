@@ -17,6 +17,8 @@ Rails.application.routes.draw do
 
   get 'list' => 'groups#list'
 
+  patch 'primary_group' => 'users#set_primary_group'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

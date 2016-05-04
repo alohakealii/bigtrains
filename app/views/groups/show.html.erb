@@ -3,6 +3,15 @@
 <div class="group panel panel-default">
   <div class="group-name">
     <%= @group.name %>
+    <% if current_user %>
+    <div class="btn-group">
+      <button type="button" class="btn btn-default dropdown-toggle glyphicon glyphicon-cog settings" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+      </button>
+      <ul class="dropdown-menu">
+        <li><%= link_to "Set as primary group", primary_group_url(group_id: @group.id), method: :patch %></li>
+      </ul>
+    </div>
+    <% end %>
   </div>
 
   <table class="topics">

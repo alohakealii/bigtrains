@@ -1,6 +1,20 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :edit, :update, :destroy]
 
+  # PATCH/PUT /primary_group?group_id=n
+  def set_primary_group
+    @user = current_user
+    group = Group.find params[:group_id]
+    @user.primary_group = group
+    respond_to do |format|
+      if @user.save
+        format.html { redirect_to group, notice: 'Primary group was successfully updated.' }
+      else
+        format.html { redirect_to group, status: 'Error updating primary group' }
+      end
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index
