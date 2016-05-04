@@ -20,7 +20,7 @@ class GroupsController < ApplicationController
 	# GET /list
 	def list
 		@groups = Group.all.select { |group| group.root? }
-		@user = User.find session[:user_id]
+		@user = session[:user_id] ? User.find(session[:user_id]) : nil
 	end
 
 	# GET /groups/1/edit
