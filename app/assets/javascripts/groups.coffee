@@ -9,7 +9,10 @@ $ ->
 		window.location.assign( $(this).attr('href') )
 		# console.log($(this).attr('href'))
 
-	# Make a div or something next to group-info divs to set as primary
-
-
 	# Make users primary group stand out
+	primary_group_id = $('.primary-group-id').text()
+	$('#' + primary_group_id).css('background-color', 'yellow')
+		.mouseover (e) ->
+			$(this).css('background-color', 'green')
+		.mouseout (e) ->
+			$(this).css('background-color', 'yellow')

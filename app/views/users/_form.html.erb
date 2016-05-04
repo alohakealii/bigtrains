@@ -37,7 +37,7 @@
   </div>
   <div class="form-group">
     <%= f.label :primary_group %><br>
-    <%= collection_select :user, :primary_group, Group.all, :id, :name %>
+    <%= group_select(@user) %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-primary" %>
