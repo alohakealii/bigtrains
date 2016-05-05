@@ -18,11 +18,25 @@ class Group < ActiveRecord::Base
 		children.include? other
 	end
 
+	def descendantOf?(other)
+		if root?
+			false
+		elsif childOf? other
+			true
+		else
+			parents.any? { |parent| parent.descendantOf? other }
+		end
+	end
+
 	def root?
 		parents.empty?
 	end
 
 	def add_child!(other)
+		if descendantOf? other
+			raise "Cannot make child of group in parent chain"
+		end
+		
 		children << other
 	end
 
