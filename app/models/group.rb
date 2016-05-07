@@ -1,4 +1,5 @@
 class Group < ActiveRecord::Base
+	validates :name, presence: :true
 	has_many :children, 
 		class_name: "Group", 
 		through: :child_connections,

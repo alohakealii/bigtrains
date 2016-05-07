@@ -15,8 +15,8 @@
         <td><%= topic.title %></td>
         <td><%= topic.posts[0].user.last_name.capitalize %></td>
         <td><%= topic.posts[0].user.first_name.capitalize %></td>
-        <td><%= link_to 'Show', topic %></td>
-        <td><%= link_to 'Edit', edit_topic_path(topic) %></td>
+        <td><%= link_to 'Show', group_topic_path(topic) %></td>
+        <td><%= link_to 'Edit', edit_group_topic_path(topic) %></td>
         <td><%= link_to 'Destroy', topic, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -25,4 +25,4 @@
 
 <br>
 
-<%= link_to 'New Topic', new_topic_path %>
+<%= link_to 'New Topic', new_group_topic_path %>

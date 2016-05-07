@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
   before_action :set_topic, only: [:show, :edit, :update, :destroy]
 
-  # GET /topics
+  # GET /groups/:group_id/topics
   # GET /topics.json
   def index
     @topics = Topic.all
@@ -12,9 +12,10 @@ class TopicsController < ApplicationController
   def show
   end
 
-  # GET /topics/new
+  # GET /group/:group_id/topics/new
   def new
     @topic = Topic.new
+    @group = Group.find params[:group_id]
   end
 
   # GET /topics/1/edit
@@ -56,7 +57,7 @@ class TopicsController < ApplicationController
   def destroy
     @topic.destroy
     respond_to do |format|
-      format.html { redirect_to topics_url, notice: 'Topic was successfully destroyed.' }
+      format.html { redirect_to @group, notice: 'Topic was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -66,6 +67,7 @@ class TopicsController < ApplicationController
     def set_topic
       @topic = Topic.find(params[:id])
       session[:topic_id] = params[:id]
+      @group = @topic.group
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

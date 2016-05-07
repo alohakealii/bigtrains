@@ -1,7 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
+group1:
+  name: "Group1"
+  id: 1
 
-two:
-  name: MyString
+group2:
+  name: "Group2"
+  id: 2
+
+group3:
+  name: "Group3"
+  id: 3

@@ -17,10 +17,10 @@
       <tr>
         <td><%= post.body %></td>
         <td><%= post.topic.title %></td>
-        <td><%= post.user.name %></td>
-        <td><%= link_to 'Show', post %></td>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= post.user.first_name %></td>
+        <td><%= link_to 'Show', group_topic_post_path(post) %></td>
+        <td><%= link_to 'Edit', edit_group_topic_post_path(post) %></td>
+        <td><%= link_to 'Destroy', group_topic_post_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Post', new_post_path %>
+<%= link_to 'New Post', new_group_topic_post_path %>
