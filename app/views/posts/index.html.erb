@@ -18,7 +18,7 @@
         <td><%= post.body %></td>
         <td><%= post.topic.title %></td>
         <td><%= post.user.first_name %></td>
-        <td><%= link_to 'Show', group_topic_post_path(post) %></td>
+        <td><%= link_to 'Show', post %></td>
         <td><%= link_to 'Edit', edit_group_topic_post_path(post) %></td>
         <td><%= link_to 'Destroy', group_topic_post_path, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

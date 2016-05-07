@@ -15,6 +15,7 @@ class PostsController < ApplicationController
   # GET /posts/new
   def new
     @post = Post.new
+    @topic = Topic.find params[:topic_id]
     @group = Group.find params[:group_id]
   end
 
@@ -26,7 +27,7 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @topic = session[:topic_id]
+    @topic = Topic.find @post.topic_id
 
     respond_to do |format|
       if @post.save
@@ -44,7 +45,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to @topic, notice: 'Post was successfully updated.' }
+        format.html { redirect_to group_topic_path(@group, @topic), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render topic_path(id: session[:topic_id]) }
@@ -58,7 +59,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to group_topic_path(id: @topic, group_id: @group), notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to group_topic_path(@group, @topic), notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
