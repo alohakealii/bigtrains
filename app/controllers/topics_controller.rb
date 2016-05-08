@@ -1,31 +1,16 @@
 class TopicsController < ApplicationController
-  before_action :set_topic, only: [:show, :edit, :update, :destroy]
-
-  # GET /groups/:group_id/topics
-  # GET /topics.json
-  def index
-    @topics = Topic.all
-  end
+  before_action :set_topic, only: [:show, :update, :destroy]
 
   # GET /topics/1
   # GET /topics/1.json
   def show
   end
 
-  # GET /group/:group_id/topics/new
-  def new
-    @topic = Topic.new
-    @group = Group.find params[:group_id]
-  end
-
-  # GET /topics/1/edit
-  def edit
-  end
-
   # POST /topics
   # POST /topics.json
   def create
     @topic = Topic.new(topic_params)
+    @group = @topic.group
 
     respond_to do |format|
       if @topic.save
@@ -43,7 +28,7 @@ class TopicsController < ApplicationController
   def update
     respond_to do |format|
       if @topic.update(topic_params)
-        format.html { redirect_to @topic, notice: 'Topic was successfully updated.' }
+        format.html { redirect_to group_topic_path(@group, @topic), notice: 'Topic was successfully updated.' }
         format.json { render :show, status: :ok, location: @topic }
       else
         format.html { render :edit }

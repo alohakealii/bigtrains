@@ -1,37 +1,16 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :edit, :update, :destroy]
-
-  # GET /posts
-  # GET /posts.json
-  def index
-    @posts = Post.all
-  end
-
-  # GET /posts/1
-  # GET /posts/1.json
-  def show
-  end
-
-  # GET /posts/new
-  def new
-    @post = Post.new
-    @topic = Topic.find params[:topic_id]
-    @group = Group.find params[:group_id]
-  end
-
-  # GET /posts/1/edit
-  def edit
-  end
+  before_action :set_post, only: [:update, :destroy]
 
   # POST /posts
   # POST /posts.json
   def create
     @post = Post.new(post_params)
-    @topic = Topic.find @post.topic_id
+    @topic = @post.topic
+    @group = @topic.group
 
     respond_to do |format|
       if @post.save
-        format.html { redirect_to @topic, notice: 'Post was successfully created.' }
+        format.html { redirect_to group_topic_path(@group, @topic), notice: 'Post was successfully created.' }
         format.json { render :show, status: :created, location: @post }
       else
         format.html { render @topic }
@@ -45,7 +24,7 @@ class PostsController < ApplicationController
   def update
     respond_to do |format|
       if @post.update(post_params)
-        format.html { redirect_to group_topic_path(@group, @topic), notice: 'Post was successfully updated.' }
+        format.html { redirect_to group_topic_path(group_id: @topic.group_id, id: @topic), notice: 'Post was successfully updated.' }
         format.json { render :show, status: :ok, location: @post }
       else
         format.html { render topic_path(id: session[:topic_id]) }

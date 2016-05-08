@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :groups do
-    resources :topics do
-      resources :posts
+    resources :topics, only: [:show, :create, :update, :destroy] do
+      resources :posts, only: [:create, :update, :destroy]
     end
   end
   resources :users

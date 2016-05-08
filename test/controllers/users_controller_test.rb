@@ -19,10 +19,10 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, user: { first_name: @user.first_name, last_name: @user.last_name, phone: @user.phone, email: @user.email, password: "password", password_confirmation: "password", primary_group: @primary_group }
+      post :create, user: { first_name: @user.first_name, last_name: @user.last_name, phone: @user.phone, email: "newtest@bigtrains.com", password: "password", password_confirmation: "password", primary_group: @primary_group }
     end
 
-    assert_redirected_to user_path(assigns(:user))
+    assert_redirected_to group_path(assigns(:user).primary_group)
   end
 
   test "should show user" do
