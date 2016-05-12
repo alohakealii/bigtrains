@@ -35,3 +35,36 @@
 		}	
 	}
 }
+
+.topics {
+	width: 100%;
+}
+
+.group-name, .form {
+	text-align: center;
+}
+
+#new_topic {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 1.25em;
+	width: 55em;
+	margin-top: 1em;
+	background-color: #E0E0E0;
+	border-bottom: 1px solid black;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+}
+
+#new_topic .field {
+	padding-top: 1em;
+}
+
+#topic_title, .actions input {
+	width: 50em;
+}
+
+.topics td {
+	background-color: #E0E0E0;
+	font-size: 1.25em;
+}
