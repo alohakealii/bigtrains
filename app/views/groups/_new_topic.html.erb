@@ -1,6 +1,6 @@
 <%= form_for [@group, @group.topics.build] do |f| %>
   <div class="field">
-    <%= f.text_field :title, :value => "New topic title..." %>
+    <%= f.text_field :title, :placeholder => "New topic title..." %>
   </div>
 <!--   <div class="field">
   	<%#= f.text_area :body %>

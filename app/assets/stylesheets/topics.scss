@@ -29,3 +29,19 @@
 		}
 	}
 }
+
+.topic .posts .panel {
+	background-color: #E0E0E0;
+	border-right: 1px solid black;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.topic .posts .panel .panel-heading {
+	border: 0;
+	background-color: #EEEEEE;
+}
+
+.posts .panel .author {
+	color: #607D8B;
+}

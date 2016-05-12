@@ -1,6 +1,6 @@
 <%= form_for [@topic, @topic.posts.build], url: group_topic_posts_path(topic_id: @topic.id) do |f| %>
   <div class="field">
-    <%= f.text_area :body %>
+    <%= f.text_area :body, :placeholder => "New post here..." %>
   </div>
 
   <div class="actions">
