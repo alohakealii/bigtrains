@@ -22,12 +22,12 @@ body {
 
 	nav.navbar {
 		border-radius: 0;
-		background-color: inherit;
+		background-color: #9E9E9E;
 		//background-color: $secondary-color;
 		border-bottom: 2px none $color5;
 		.nav.navbar-nav li {
 		    a {
-		    	color: $color1;
+		    	color: black;
 		    }
 			a:hover {
 				color: black;

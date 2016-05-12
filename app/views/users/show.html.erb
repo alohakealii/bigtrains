@@ -1,22 +1,27 @@
-<p id="notice"><%= notice %></p>
+<style>
 
-<p>
+
+</style>
+
+<!-- <p id="notice"><%= notice %></p> -->
+
+<p class="info">
   <strong>First Name:</strong>
   <%= @user.first_name %>
 </p>
-<p>
+<p class="info">
   <strong>Last Name:</strong>
   <%= @user.last_name %>
 </p>
-<p>
+<p class="info">
   <strong>Phone:</strong>
   <%= @user.phone %>
 </p>
-<p>
+<p class="info">
   <strong>Email:</strong>
   <%= @user.email %>
 </p>
-<p>
+<p class="info">
 	<strong>Primary Group:</strong>
 	<% if @user.primary_group %>
 		<%= link_to @user.primary_group.name, group_path(@user.primary_group.id) %>
@@ -25,4 +30,6 @@
 	<% end %>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %>
+<p id="edit">
+	<%= link_to 'Edit', edit_user_path(@user) %>
+</p>
