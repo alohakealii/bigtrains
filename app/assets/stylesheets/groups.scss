@@ -50,17 +50,16 @@
 	font-size: 1.25em;
 	width: 55em;
 	margin-top: 1em;
+	margin-bottom: 1em;
 	background-color: #E0E0E0;
-	border-bottom: 1px solid black;
-	border-left: 1px solid black;
-	border-right: 1px solid black;
+	border: 1px solid black;
 }
 
 #new_topic .field {
 	padding-top: 1em;
 }
 
-#topic_title, .actions input {
+#topic_title {
 	width: 50em;
 }
 
